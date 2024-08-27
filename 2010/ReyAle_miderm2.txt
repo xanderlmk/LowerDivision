@@ -1,0 +1,6 @@
+A. int data [100] will contain 100 integer elemts
+B. T
+C. F
+D. F
+E. F
+

@@ -1,0 +1,7 @@
+1. The results end up being 0000 0000 because you only have room for 8 bits, even though the result should be 1 000 0000. This is called overflow.
+
+11. MUL treats rs and rt as signed ints and stores the product in rd.
+MULTU treats rs and rt as unsigned ints and stores the product in the accumulator HiLo.
+MULT treats rs and rt as signed ints and stores the product in the accumulator HiLo.
+
+21. shift right logical on a negative twos complement number loses the sign bit for even a small value, but shift right arithmetic(sra) does not. the sra replicates the sign bit as needed to fill the bit positions emptied by the shift.

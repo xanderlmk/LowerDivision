@@ -1,0 +1,39 @@
+    1.
+        a. F
+        b. T
+        c. F
+        d. T
+        e. F
+
+    2.
+        a) if (choice == 'm' || choice == 'M')
+        b) if ( d1 * d2 <= product)
+        c) if (scores[0] > 75 && scores[1] > 75)
+        d) if (title != "Minecraft" || title != "Animal Crossing")
+        e) if (level_name[6] == '\0')
+    
+    3.  
+        output would be ------> AB
+
+    4.
+        int add_values(bool states[], int values[], int size)
+        {
+            int total = 0;
+
+            for ( int i = 0; i < size; i++)
+            {
+                if (states[i] == true)
+                total = total + values[i];
+                else
+                total = total;
+            }
+
+            return total;
+        }
+    5.
+        a. The copy contructer is used to copy one object to another.
+        b. A friend function is a function that gets access to private members in a class, but the function is not part of the class itself.
+        c. A Default parameter is a variable that is set to initially equal to something, that way if it is called, it already has a default value and won't need to have a value,string, etc passed into it.
+        d. A deference operator is * and points to the value of given variable.
+        e. When the ampersand is used in a function parameter definition, it passed values between the function and main. It is passed by reference.
+

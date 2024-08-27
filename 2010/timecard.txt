@@ -1,0 +1,8 @@
+First Name: alex
+Last Name: ¨í¼Òþ
+Day 1 : 2
+Day 2 : 5
+Day 3 : 2
+Day 4 : 7
+Day 5 : 2
+Total : 18

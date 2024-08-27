@@ -1,0 +1,151 @@
+
+    1.
+        a. False
+        b. True
+        c. True
+        d. True
+        e. True
+        f. True
+
+    2.
+        a. 
+
+            int num = 30;
+            do
+            {
+            cout << num << endl;
+            num--;
+            } while (num >= 5);
+
+        b. 
+            int num = 30;
+            while (num >= 5)
+            {
+            cout << num << endl;
+            num--;
+            }
+        c. 
+            for (int num = 1; num <= 20; num++)
+                {
+                cout << num << endl;
+                }
+
+    3.
+        int time;
+        int seconds;
+        cout << "Pick a number from 0-300" << endl;
+        cin >> time;
+
+            if ( time > 70 && time <= 300)
+            {
+
+            if ( time % 60 == 0)
+            {
+            time = time / 60;
+            cout << time << " minutes ago" << endl;
+            }
+
+            else
+            {
+            seconds = (time * 60) / 100;
+            time = time / 60;
+            cout << time << " minutes and " << seconds << " seconds ago" << endl;
+            }
+
+            }
+
+        else if ( time > 15 && time <= 70)
+        {
+        cout << "About a minute ago" << endl;
+        }
+
+        else if ( time >= 0 && time <= 15)
+        {
+        cout << "just now" << endl; 
+        }
+
+        else
+        {
+        cout << "An actual number between 0-300 next time please." << endl;
+        }
+ 
+    4.
+        NO
+        YES
+        YES
+        YES
+        YES
+    5.
+        a. X = (a + b) * (2 * a - 7)
+        b. Y = a * a - ( (a * b) / (a + 1) ) + 4 * (b * b)
+    6.
+        int num;
+        
+        int total = 0;
+        
+        int countofnum = 0;
+        do
+        {
+        cout << "Enter any number:  " << endl;
+        cin >> num;
+
+            if ( num < 0 )
+            {
+                num = num * -1;
+            }
+
+            total = num + total;
+            countofnum++;
+
+        } while ( total <= 100 );
+        cout << countofnum << " numbers enter, total of " << total << endl;
+    7.
+        #a# ---> int
+        #b# ---> case 1
+    8.
+        a.
+            ANSWER:  4 10
+        b.
+            ANSWER:  2
+        c.
+            ANSWER:  1200
+        d.
+            ANSWER:  40, height == width
+        e.
+            ANSWER:  5 != 10 <--- true
+        f.
+            ANSWER:  6.66
+        g.
+            ANSWER:  25
+        h.
+            ANSWER:  7.5
+        i.
+            ANSWER: False
+    9.
+        if ( speed > 100 )
+        {
+            if ( distance > 0 )
+            {
+                if ( fuel > 20)
+                {
+                    cout << "Go!";
+                }
+            }
+        }
+    10.
+        1275
+        1500
+        875
+    11. 
+        a) char input = 'q', 'Q';
+        f) data1 = 10;
+           data2 = 20, x;
+           x = 10;
+           bool is_open = true
+        g) 
+           if ( x % data1 == 0)
+           {
+           data2 = data2 * 2;
+           }
+        i) data2 + x , data1 = 10; and data2 = 20, x; they do have different values, only if x != 10 
+

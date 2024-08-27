@@ -1,0 +1,74 @@
+6.  mov eax, ebx           ; copy the value in ebx into eax
+    mov byte ptr [var], 5  ; store the value 5 into the byte at location var
+    I learned that the mov instruction is similiar to that of MIPS, moving values from right to left.
+
+11. dec eax             ; subtract one from the contents of EAX.
+    inc DWORD PTR [var] ; add one to the 32-bit integer stored at location var
+    I learned that these commands of dec and inc are exclusive to x86, but are also very useful to trunk off
+    parts of strings,integers, etc.
+
+    The lea instruction puts the address specified by its second operand into the register specified by 
+    its first operand. the contents of the memory location are not loaded, 
+    only the effective address is computed and placed into the register.
+
+1.  ESP is used as the stack pointer EBP is used as the base pointer.
+
+2.  EAX is a 32-bit register; AX is 2 least significant bytes (16-bits) of the EAX register.
+    The least significant byte of AX is AL (low); The most significant byte of AX is AH (high).
+
+3.  .DATA
+    var DB 64  ; Declare 1 byte, labeled var, containing the value 64.
+    var2  DB ? ; Declare 1 uninitialized byte, labeled var2. 
+    DB 10      ; Declare 1 byte, no label, value = 10. location is var2 + 1.
+    X  DW ?    ; Declare 2-byte uninitialized value, labeled X. 
+    Y  DD 3000 ; Declare 4-byte (double) value labeled Y, initialized to 3000.
+
+4.   Z     DD 1, 2, 3    ; init 3 4-byte values to 1,2,3 (location Z+8=3)
+    bytes DB 10 DUP(?)  ; Declare 10 uninitialized bytes starting at location bytes.
+    arr   DD 100 DUP(0) ; Initialize 100 4-byte words starting at arr with 0
+    str   DB hello,0    ; Declare 6 bytes starting at the address str, initialized
+                        ; to the ASCII values for hello followed by the null (0) byte.
+
+5.  mov eax, [ebx]         ; Move 4 bytes at address contained in EBX into EAX
+    mov [var], ebx         ; Move contents of EBX into 4 bytes at memory address var.
+    mov eax, [esi-4]       ; Move 4 bytes at memory address ESI + (-4) into EAX
+    mov [esi+eax], cl      ; Move contents of CL into the byte at address ESI+EAX
+    mov BYTE PTR [ebx], 12 ; move 12 into 1 byte at the address stored in EBX.
+    mov WORD PTR [ebx], 5  ; move 5 into 2 bytes starting at address in EBX.
+    mov DWORD PTR [ebx], 9 ; move 9 into 4 bytes starting at address in EBX.
+
+7.  push eax   ; push contents of eax on the stack 
+    push [var] ; push the contents of 4 bytes at address var onto the stack
+
+8.  pop edi   ; pop top of the stack; move to register EDI
+    pop [ebx] ; pop top of the stack; store to memory location in EBX.
+
+9.  lea eax, [var]       ; address  of symbol var is loaded into register eax
+    lea edi, [ebx+4*esi] ; address in ebx + offset is loaded into register edi
+
+10. add eax, 10            ; increment value in eax by 10
+    add BYTE PTR [var], 10 ; increment byte pointed to by address in var by 10
+    sub al, ah             ; subtract value in AH from value in AL and stuff it in AL
+    imul eax, [var]        ; eax = eax * value at address var 
+    imul esi, edi, 25      ; esi = edi * 25 
+
+12. idiv ebx             ; divide contents of EDX:EAX by the contents of EBX. Place 
+                         ; the quotient in EAX and the remainder in EDX. 
+    idiv DWORD PTR [var] ; divide contents of EDX:EAX by 32-bit value stored 
+                         ; at memory location var, put quotient in EAX and remainder in EDX.
+13. and eax, 0fH  ; clear all but the last 4 bits of EAX. 
+    xor edx, edx  ; set the contents of EDX to zero. 
+    neg edx       ; perform twos-complement negation of value in edx;e.g.5=-5.
+    not edx       ; flip all bits in edx
+14. shl eax,1  ;multiply value of EAX by 2 (if most sig bit=1 you get overflow)
+    shr ebx,cl ;divide value of EBX by 2^n, where n is the value in CL.
+15. The address of the next instruction to be fetched and executed.
+16. jump L1  ; unconditional jump to label L1 
+    jle done ; jump to label done if condition bit is -1 or 0 
+    je L1    ; jump if condition bit is 0   
+    jge L1   ; jump if condition bit is 0 or 1
+17. cmp eax, ebx            ; subtract value in ebx from value in ebx; set condition bit
+    jle done                ; if condition bit is -1 or 0 jump to done  
+    cmp DWORD PTR [var], 10 ; subtract 10 from value at address var; set bit
+    jeq loop                ; jump to loop if condition bit is 0
+18. "call" is used to call a subroutine,in this case subroutine foo. "return" returns from a subroutine..

@@ -1,0 +1,5 @@
+4. An unconditional jump with no other control structure in the loop (such as a conditional branch to exit) results in an infinite loop.
+
+8. Relational operators compare two values and return true or false. The operators are: <, <=, =, >, >= , !=; for example 5 <= 8 returns true; 7 >= 9 returns false; 3 = 3 returns true.
+
+18. Load instructions require a memory access so there is also a delay.
